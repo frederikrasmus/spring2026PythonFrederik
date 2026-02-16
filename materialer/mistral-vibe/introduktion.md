@@ -15,7 +15,7 @@ I skal først og fremmest installere og analysere. I skal ændre i koden, og lav
 
 ## Forberedelse
 Ingen forberedelse til i dag.     
-Dog, en god ide at skimme materialet på denne side inden undervisningen. (kommer senere i dag)
+Dog, en god ide at skimme materialet på denne side inden undervisningen.
 
 ## Dagen i dag
 
