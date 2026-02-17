@@ -1,1 +1,0 @@
-jupyter nbconvert '<notebook-file-name>.ipynb' --to slides --post serve
