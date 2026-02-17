@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing the Ollama &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installing the Ollama</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/notebooks/installing_ollama.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installing-the-ollama">
+<h1>Installing the Ollama<a class="headerlink" href="#installing-the-ollama" title="Permalink to this heading"></a></h1>
+<p>The pourpous of this document is to guide you trough the installation of the the docker image Ollama, and to ensure that you have the right tools installed to work with the container.</p>
+<p>Prequisite:</p>
+<p>Before we start you need to have installed:</p>
+<ul class="simple">
+<li><p>Docker Desktop</p></li>
+<li><p>Python</p></li>
+<li><p>A text editor (VS Code)</p></li>
+</ul>
+<section id="installing-docker-desktop">
+<h2>Installing Docker Desktop<a class="headerlink" href="#installing-docker-desktop" title="Permalink to this heading"></a></h2>
+<p>You have used Docker desktop on your 3rd semester, so unless you have changed your computer since then, it should be on your machine.
+If not you should install it now.</p>
+<p>For the rest of you make sure that your Docker desktop is up to date.</p>
+</section>
+<section id="instaling-python">
+<h2>Instaling Python<a class="headerlink" href="#instaling-python" title="Permalink to this heading"></a></h2>
+<p>You are going to work on your local machine (not on Github Codespaces). This means that you should have python installed on your machine.</p>
+<p>You can download python from here: <a class="reference external" href="https://www.python.org/downloads/">Download Python</a></p>
+<p>When this is done, check if you have it installed by typing in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>And you should see something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ python3 --version
+    Python 3.10.9
+</pre></div>
+</div>
+</section>
+<section id="installing-vs-code">
+<h2>installing VS Code<a class="headerlink" href="#installing-vs-code" title="Permalink to this heading"></a></h2>
+<p>You will need a text editor installed on your computer. Anyone will do, but VSCode is recomended.</p>
+</section>
+<section id="running-the-ollama-container">
+<h2>Running the Ollama Container<a class="headerlink" href="#running-the-ollama-container" title="Permalink to this heading"></a></h2>
+<p>Ollama is as they describe the tool “The easiest way to get up and running with large language models locally”. An this is exatly what we are going to do, work with LLM locally. So instead of using OpenAI´s api, we are going to use a locally installed LLM and check out how this works out.</p>
+<p>The installation is simple. Type this in your terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">v</span> <span class="n">ollama</span><span class="p">:</span><span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">ollama</span> <span class="o">-</span><span class="n">p</span> <span class="mi">11434</span><span class="p">:</span><span class="mi">11434</span> <span class="o">--</span><span class="n">name</span> <span class="n">ollama</span> <span class="n">ollama</span><span class="o">/</span><span class="n">ollama</span>
+</pre></div>
+</div>
+<p>Open your docker desktop gui and click “open in terminal”</p>
+<p><img alt="../_images/ollama_1.png" src="../_images/ollama_1.png" /></p>
+<p>Type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">ollama</span> <span class="n">run</span> <span class="n">llama2</span>
+</pre></div>
+</div>
+<p>and you should see something like this:</p>
+<p><img alt="../_images/ollama_2.png" src="../_images/ollama_2.png" /></p>
+<p>Now you can type in your prompt in the console, or you can open <code class="docutils literal notranslate"><span class="pre">postman</span></code> or use <code class="docutils literal notranslate"><span class="pre">curl</span></code> and send a prompt like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">11434</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">generate</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;prompt&quot;</span><span class="p">:</span><span class="s2">&quot;give me the zen of python&quot;</span>
+    <span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

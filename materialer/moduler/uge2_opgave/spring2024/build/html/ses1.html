@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session 1 - Introduction to python &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Session 2 - Data Structures: List, Tuple, Set &amp; Dict" href="ses2.html" />
+    <link rel="prev" title="Exam" href="exam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exam.html">Exam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Session 1 - Introduction to python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#learning-goals">Learning goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quizes">Quizes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Session 1 - Introduction to python</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/ses1.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-1-introduction-to-python">
+<h1>Session 1 - Introduction to python<a class="headerlink" href="#session-1-introduction-to-python" title="Permalink to this heading"></a></h1>
+<p>This first week of this elective will be used for introducing this elective and making sure that you all have the software needed to follow along.</p>
+<p>The first part of today will be an “overview” and “installation” day. We need to be on the same level before we start.</p>
+<p>In the second part you will get an overview of the python language and you will start to get familiar with the language and the development enviroment. We will focus this first lesson on strings and string manipulations, functions and on the “look and feel” of a python script file.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<dl class="simple">
+<dt>Preperation</dt><dd><p>Before we meet in class you should have:</p>
+<ul class="simple">
+<li><p>Done the <a class="reference internal" href="notebooks/installation.html"><span class="doc">Installations</span></a> (10 min)</p></li>
+<li><p>Read through <a class="reference internal" href="about.html"><span class="doc">About this elective</span></a> (5 min)</p></li>
+<li><p>Skimmed the rest of the session pages (in the left menu) (10 min)</p></li>
+<li><p>Looked this video: <a class="reference external" href="https://www.youtube.com/watch?v=5fN3JXwer2U">Guido van Rossum explains Python programming</a> (20 min)</p></li>
+</ul>
+</dd>
+<dt>Time in class</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="notebooks/notes01.html"><span class="doc">Introduction slides about the formal stuff</span></a></p></li>
+<li><p><a class="reference internal" href="notebooks/notes_day1_s24.html"><span class="doc">Notes from teachings about Strings and other basic stuff</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses1">Code examples from teachings</a></p></li>
+</ul>
+</dd>
+<dt>Homework</dt><dd><ul class="simple">
+<li><p>You should finnish the exercises.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<section id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<p>After this week you will:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Have an overview of how this elective is structured, and what you can expeted to learn during this semester.</p></li>
+<li><p>Have an understanding of how you are excpected to learn during this semster.</p></li>
+<li><p>Have a basic understanding of a python development enviroment, and know how to use it.</p></li>
+<li><p>Have a basic understanding of how a python script is structured.</p></li>
+<li><p>Be able to work with python strings, conditions and functions.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="notebooks/installation.html"><span class="doc">Installations</span></a></p></li>
+<li><p><a class="reference internal" href="notebooks/dev_environment.html"><span class="doc">Development environment this semester</span></a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-strings/">Strings and Character Data in Python</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html">Built-in Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=5fN3JXwer2U">Guido van Rossum explains Python programming</a></p></li>
+<li><p><a class="reference internal" href="notebooks/notes_day1_s24.html"><span class="doc">Notes from teachings about Strings and other basic stuff</span></a></p></li>
+<li><p><a class="reference internal" href="notebooks/notes01.html"><span class="doc">Introduction slides about the formal stuff</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses1">Code examples from teachings</a></p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses1/exercises">Exercise 1: Strings1 &amp; Strings2</a>  (<a class="reference internal" href="exercises/solution/01_strings/strings.html"><span class="doc">Solution</span></a> (is online Wednessday))</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=7lmCu8wz8ro&amp;t=0s">What Does It Take To Be An Expert At Python?</a> (this you can do in the end of this semester)</p></li>
+</ul>
+<section id="quizes">
+<h3>Quizes<a class="headerlink" href="#quizes" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/quizzes/python-strings/">Python Strings and Character Data Quiz</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/quizzes/python-split-strings/">Splitting, Concatenating, and Joining Strings in Python Quiz</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="exam.html" class="btn btn-neutral float-left" title="Exam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ses2.html" class="btn btn-neutral float-right" title="Session 2 - Data Structures: List, Tuple, Set &amp; Dict" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions decorator exercises &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Solutions decorator exercises</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/exercises/solution/06_decorators/solutions.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solutions-decorator-exercises">
+<h1>Solutions decorator exercises<a class="headerlink" href="#solutions-decorator-exercises" title="Permalink to this heading"></a></h1>
+<section id="warm-up-exercise">
+<h2>Warm up exercise<a class="headerlink" href="#warm-up-exercise" title="Permalink to this heading"></a></h2>
+<div class="highlight-pythony notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span># returntype.py
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span># All functions has a return type and value. If no one is specified, the function will return a value of &#39;None&#39; which has the type of &#39;NoneType&#39;.
+<span class="linenos"> 4</span># So a function like this:
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>def add():
+<span class="linenos"> 7</span>    print(&#39;Hello&#39;)
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span># will in reality look like this:
+<span class="linenos">10</span>
+<span class="linenos">11</span>def add():
+<span class="linenos">12</span>    print(&#39;Hello&#39;)
+<span class="linenos">13</span>    return None
+<span class="linenos">14</span>
+<span class="linenos">15</span># so it is important not to think that this function:
+<span class="linenos">16</span>
+<span class="linenos">17</span>def add():
+<span class="linenos">18</span>    print(&#39;Hello&#39;)
+<span class="linenos">19</span>
+<span class="linenos">20</span># has the return value of &#39;Hello&#39;.
+<span class="linenos">21</span># It has a side effect of printing out &#39;Hello&#39;, but a return value of &#39;None&#39;.
+</pre></div>
+</div>
+</section>
+<section id="small-exercises">
+<h2>Small Exercises<a class="headerlink" href="#small-exercises" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># add.py</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos"> 6</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;log.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span>
+<span class="linenos"> 8</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@log</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">14</span>    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">15</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<span class="linenos">16</span>        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> 
+<span class="linenos">17</span>    <span class="k">return</span> <span class="nb">sum</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nd">@log</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="linenos">21</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;From printer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ex1-time-it">
+<h2>Ex1: Time it!<a class="headerlink" href="#ex1-time-it" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># timer.py</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>                                                                                                                                   
+<span class="linenos"> 5</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>                                                                                                                  
+<span class="linenos"> 6</span>        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>                                                                                                                        
+<span class="linenos"> 7</span>        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>                                                                                                                      
+<span class="linenos"> 8</span>        <span class="n">end</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="n">start</span>                                                                                                              
+<span class="linenos"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time elapsed: </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                                                                                                              
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">return</span> <span class="n">wrapper</span>                                                                                                                                 
+<span class="linenos">12</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="nd">@timer</span>                                                                                                                                             
+<span class="linenos">15</span><span class="k">def</span> <span class="nf">genrate_list</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>                                                                                                                             
+<span class="linenos">16</span>    <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">)]</span>
+</pre></div>
+</div>
+</section>
+<section id="ex3-slow-down-code">
+<h2>Ex3: Slow down code<a class="headerlink" href="#ex3-slow-down-code" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span><span class="sd">    Exercise: Slow down code</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="sd">    The code below counts down from n -&gt; 0.</span>
+<span class="linenos"> 5</span><span class="sd">    calling countdown(5) prints: 5 4 3 2 1 0</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="sd">    Create a decorator that slows down you code by 1 second for each step. </span>
+<span class="linenos"> 8</span><span class="sd">    Call it slowdown().</span>
+<span class="linenos"> 9</span><span class="sd">    For this you can use the &#39;time&#39; module.</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="sd">    The countdown function is a recursive function.</span>
+<span class="linenos">12</span><span class="sd">    </span>
+<span class="linenos">13</span><span class="sd">    When you got the &#39;slowdown code&#39; working on this recursive function, try to create a more (for you) normal function that does the countdown, and see what happens if you decorate that function with you slowdown() function</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="kn">import</span> <span class="nn">time</span> 
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">def</span> <span class="nf">slowdown</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos">20</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">21</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">22</span>        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+<span class="linenos">23</span>    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="nd">@slowdown</span>
+<span class="linenos">28</span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">29</span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="p">:</span>   <span class="c1"># 0 is false, not false is true</span>
+<span class="linenos">30</span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;liftoff&#39;</span><span class="p">)</span>
+<span class="linenos">31</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">32</span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="linenos">33</span>        <span class="k">return</span> <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># call the same function with n as one less </span>
+</pre></div>
+</div>
+</section>
+<section id="ex4-game">
+<h2>Ex4: Game<a class="headerlink" href="#ex4-game" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">sharpshooter</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s1"> the sharpshooter&#39;</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">stealthy</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s1"> and the stealthy character&#39;</span>
+<span class="linenos"> 9</span>    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nd">@stealthy</span>
+<span class="linenos">12</span><span class="nd">@sharpshooter</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">player</span><span class="p">():</span>
+<span class="linenos">14</span>    <span class="k">return</span> <span class="s2">&quot;I&#39;m the player character&quot;</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="ex5-register">
+<h2>Ex5: Register<a class="headerlink" href="#ex5-register" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">REGISTER</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos"> 4</span>    <span class="n">REGISTER</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos"> 5</span>    <span class="k">return</span> <span class="n">func</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># this functions simulate html pages</span>
+<span class="linenos"> 8</span><span class="nd">@register</span>
+<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+<span class="linenos">10</span>    <span class="k">return</span> <span class="s1">&#39;Im the home page&#39;</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@register</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
+<span class="linenos">14</span>    <span class="k">return</span> <span class="s1">&#39;Im the about page&#39;</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="k">def</span> <span class="nf">excluded_for_now</span><span class="p">():</span>
+<span class="linenos">17</span>    <span class="k">return</span> <span class="s1">&#39;excluded&#39;</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="c1"># simple menu demo </span>
+<span class="linenos">21</span><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+<span class="linenos">22</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">REGISTER</span><span class="p">):</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="linenos">24</span>    <span class="nb">print</span><span class="p">()</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="n">choise</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span> 
+<span class="linenos">29</span>    <span class="n">menu</span><span class="p">()</span>
+<span class="linenos">30</span>    <span class="k">if</span> <span class="n">choise</span><span class="p">:</span>
+<span class="linenos">31</span>        <span class="n">choise</span> <span class="o">=</span> <span class="n">REGISTER</span><span class="p">[</span><span class="n">choise</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]()</span>
+<span class="linenos">32</span>        <span class="nb">print</span><span class="p">(</span><span class="n">choise</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="n">choise</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;choose a number: &#39;</span><span class="p">))</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

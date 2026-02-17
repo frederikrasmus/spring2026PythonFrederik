@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions decorator exercises &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Solutions decorator exercises</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/exercises/solution/48_problem_solving/solutions.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solutions-decorator-exercises">
+<h1>Solutions decorator exercises<a class="headerlink" href="#solutions-decorator-exercises" title="Permalink to this heading"></a></h1>
+<section id="google-job-interview">
+<h2>Google Job Interview<a class="headerlink" href="#google-job-interview" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>
+<span class="linenos"> 2</span><span class="c1"># Solution from video https://www.youtube.com/watch?v=XKu_SEDAykw&amp;t=379s</span>
+<span class="linenos"> 3</span><span class="c1"># [1, 2, 4, 4] =&gt; sum = 8</span>
+<span class="linenos"> 4</span><span class="c1"># [1, 2, 3, 9] =&gt; sum = 8</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">simple_solution</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="sd">&quot;&quot;&quot; Loops through all numbers - linier search&quot;&quot;&quot;</span>
+<span class="linenos"> 9</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+<span class="linenos">10</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+<span class="linenos">11</span>            <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+<span class="linenos">12</span>                <span class="c1">#print(l[i] + l[j])</span>
+<span class="linenos">13</span>                <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">14</span>            <span class="c1">#print(l[i] + l[j])</span>
+<span class="linenos">15</span>        <span class="c1"># print(&#39;=====&#39;)</span>
+<span class="linenos">16</span>    <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">def</span> <span class="nf">has_pair_with_sum</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="nb">sum</span><span class="p">):</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">22</span>    <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">:</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>        <span class="n">s</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">low</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span><span class="p">[</span><span class="n">high</span><span class="p">]</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">:</span>
+<span class="linenos">29</span>            <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">30</span>        <span class="k">elif</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="nb">sum</span><span class="p">:</span>
+<span class="linenos">31</span>            <span class="n">high</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="linenos">32</span>        <span class="k">elif</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="nb">sum</span><span class="p">:</span>
+<span class="linenos">33</span>            <span class="n">low</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>    <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="k">def</span> <span class="nf">has_pair_with_sum_ordered</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="nb">sum</span><span class="p">):</span>
+<span class="linenos">39</span>    <span class="n">comp</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">40</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<span class="linenos">41</span>        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">comp</span><span class="p">:</span>
+<span class="linenos">42</span>            <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">43</span>        <span class="n">comp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">sum</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+<span class="linenos">44</span>
+<span class="linenos">45</span>    <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="c1"># what if return should be all possiple pairs that sum to 8</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>
+<span class="linenos">51</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">52</span>    <span class="n">res</span> <span class="o">=</span> <span class="n">simple_solution</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="linenos">53</span>    <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span>    <span class="n">res</span> <span class="o">=</span> <span class="n">has_pair_with_sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">8</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">60</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

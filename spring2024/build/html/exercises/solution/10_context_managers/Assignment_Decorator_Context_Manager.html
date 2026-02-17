@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>(Solution) Decorator / Context Manager &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">(Solution) Decorator / Context Manager</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/exercises/solution/10_context_managers/Assignment_Decorator_Context_Manager.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solution-decorator-context-manager">
+<h1>(Solution) Decorator / Context Manager<a class="headerlink" href="#solution-decorator-context-manager" title="Permalink to this heading"></a></h1>
+<p>Create a simple function that prints the paramenters value to console.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quotes</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+
+<span class="n">quotes</span><span class="p">((</span><span class="s1">&#39;Honey Im home!&#39;</span><span class="p">,</span> <span class="s1">&#39;A car is a car until ...&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;Honey Im home!&#39;</span><span class="p">,</span> <span class="s1">&#39;A car is a car until ...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>You should decorate this function so it can get its quotes from:</p>
+</div></blockquote>
+<blockquote>
+<div><ol class="simple">
+<li><p>a text file</p></li>
+<li><p>a csv file</p></li>
+<li><p>a json file</p></li>
+<li><p>a SQlite databs</p></li>
+</ol>
+</div></blockquote>
+<section id="solution-text-file">
+<h2>Solution text file<a class="headerlink" href="#solution-text-file" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat testfiles/bohr.txt
+# The content of bohr.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">expert</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">person</span> <span class="n">who</span> <span class="n">has</span> <span class="n">made</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">mistakes</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">very</span> <span class="n">narrow</span> <span class="n">field</span><span class="o">.</span>
+<span class="n">Prediction</span> <span class="ow">is</span> <span class="n">very</span> <span class="n">difficult</span><span class="p">,</span> <span class="n">especially</span> <span class="n">about</span> <span class="n">the</span> <span class="n">future</span><span class="o">.</span>
+<span class="n">Those</span> <span class="n">who</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">shocked</span> <span class="n">when</span> <span class="n">they</span> <span class="n">first</span> <span class="n">come</span> <span class="n">across</span> <span class="n">quantum</span> <span class="n">theory</span> <span class="n">cannot</span> <span class="n">possibly</span> <span class="n">have</span> <span class="n">understood</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_file_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfiles/bohr.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">func</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()))</span> <span class="c1"># or *list -&gt; list unpacking</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</pre></div>
+</div>
+</section>
+<section id="solution-csv-file">
+<h2>Solution csv file<a class="headerlink" href="#solution-csv-file" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat testfiles/bohr.csv
+# The content of bohr.csv
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">,</span> <span class="n">quote</span><span class="p">,</span> <span class="n">author</span>
+<span class="mi">1</span><span class="p">,</span> <span class="n">An</span> <span class="n">expert</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">person</span> <span class="n">who</span> <span class="n">has</span> <span class="n">made</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">mistakes</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">very</span> <span class="n">narrow</span> <span class="n">field</span><span class="o">.</span><span class="p">,</span> <span class="n">bohr</span>
+<span class="mi">2</span><span class="p">,</span> <span class="n">Prediction</span> <span class="ow">is</span> <span class="n">very</span> <span class="n">difficult</span><span class="p">,</span> <span class="n">especially</span> <span class="n">about</span> <span class="n">the</span> <span class="n">future</span><span class="o">.</span><span class="p">,</span> <span class="n">bohr</span>
+<span class="mi">3</span><span class="p">,</span> <span class="n">Those</span> <span class="n">who</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">shocked</span> <span class="n">when</span> <span class="n">they</span> <span class="n">first</span> <span class="n">come</span> <span class="n">across</span> <span class="n">quantum</span> <span class="n">theory</span> <span class="n">cannot</span> <span class="n">possibly</span> <span class="n">have</span> <span class="n">understood</span> <span class="n">it</span><span class="o">.</span><span class="p">,</span> <span class="n">bohr</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">def</span> <span class="nf">csv_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfiles/bohr.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">csv_r</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="nb">next</span><span class="p">(</span><span class="n">csv_r</span><span class="p">)</span>                            <span class="c1"># skip first row</span>
+            <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_r</span><span class="p">])</span>       <span class="c1"># get content column, and unpack list</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</pre></div>
+</div>
+</section>
+<section id="solution-json">
+<h2>Solution JSON<a class="headerlink" href="#solution-json" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat testfiles/bohr.json
+# The content of bohr.json
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;quote&quot;</span><span class="p">:</span> <span class="s2">&quot;An expert is a person who has made all the mistakes that can be made in a very narrow field.&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;quote&quot;</span><span class="p">:</span> <span class="s2">&quot;Prediction is very difficult, especially about the future.&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;quote&quot;</span><span class="p">:</span> <span class="s2">&quot;Those who are not shocked when they first come across quantum theory cannot possibly have understood it.&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">json_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfiles/bohr.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">txt</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="n">js</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span> 
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;quote&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">js</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</pre></div>
+</div>
+</section>
+<section id="solution-sqlite">
+<h2>Solution SQlite<a class="headerlink" href="#solution-sqlite" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">connect</span>
+<span class="c1"># create db </span>
+<span class="k">def</span> <span class="nf">conn</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s1">&#39;testfiles/bohr.db&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS quotes&#39;</span><span class="p">)</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE quotes(id int PRIMARY KEY, quote text, author text)&#39;</span><span class="p">)</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;INSERT INTO quotes(id, quote, author) VALUES (1, &quot;An expert is a person who has made all the mistakes that can be made in a very narrow field.&quot;, &quot;bohr&quot;)&#39;</span><span class="p">)</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;INSERT INTO quotes(id, quote, author) VALUES (2, &quot;Prediction is very difficult, especially about the future.&quot;, &quot;bohr&quot;)&#39;</span><span class="p">)</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;INSERT INTO quotes(id, quote, author) VALUES(3, &quot;Those who are not shocked when they first come across quantum theory cannot possibly have understood it.&quot;, &quot;bohr&quot;)&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cur</span>
+<span class="c1"># conn()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqlite_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s1">&#39;testfiles/bohr.db&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+            <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT quote FROM quotes&#39;</span><span class="p">)))</span> <span class="c1"># result from db is return as rows of tuples. i[0] gives the first element of the tuple</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</pre></div>
+</div>
+<section id="original-function-now-decorated">
+<h3>Original function (now decorated)<a class="headerlink" href="#original-function-now-decorated" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@text_file_decorator</span>
+<span class="c1">#@csv_decorator</span>
+<span class="c1">#@json_decorator</span>
+<span class="nd">@sqlite_decorator</span>
+<span class="k">def</span> <span class="nf">quotes</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+        
+<span class="n">quotes</span><span class="p">(</span><span class="s1">&#39;Honey Im home!&#39;</span><span class="p">,</span> <span class="s1">&#39;A car is a car until ...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">expert</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">person</span> <span class="n">who</span> <span class="n">has</span> <span class="n">made</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">mistakes</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">very</span> <span class="n">narrow</span> <span class="n">field</span><span class="o">.</span>
+<span class="n">Prediction</span> <span class="ow">is</span> <span class="n">very</span> <span class="n">difficult</span><span class="p">,</span> <span class="n">especially</span> <span class="n">about</span> <span class="n">the</span> <span class="n">future</span><span class="o">.</span>
+<span class="n">Those</span> <span class="n">who</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">shocked</span> <span class="n">when</span> <span class="n">they</span> <span class="n">first</span> <span class="n">come</span> <span class="n">across</span> <span class="n">quantum</span> <span class="n">theory</span> <span class="n">cannot</span> <span class="n">possibly</span> <span class="n">have</span> <span class="n">understood</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

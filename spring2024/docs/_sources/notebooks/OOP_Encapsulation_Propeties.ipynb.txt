@@ -1,0 +1,797 @@
+{
+ "cells": [
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# OOP, Encapsulation, @Propeties"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In python all attributes are public. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "class P:\n",
+    "    def __init__(self,x):\n",
+    "        self.x = x # self.x -> public attribute\n",
+    "\n",
+    "p = P(10)\n",
+    "p.x # accessing the public attribute"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "You will sometimes see an attribute with a single or a double underscore prior to the name     \n",
+    "\n",
+    "\n",
+    "```\n",
+    "    self._x = x\n",
+    "```\n",
+    "When you read about this it will be described as a private \"like\" variable, and then a long explanation about that there is not realy anything private in python and so on. \n",
+    "\n",
+    "> In reality it is all just public attributes and some of them with a funny looking syntax."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "class P:\n",
+    "    def __init__(self,x):\n",
+    "        self._x = x\n",
+    "\n",
+    "p = P(10)\n",
+    "p._x"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In order to work with attributes the right way in python you need to understand that all attributes are public, and you need to accept and understand that this is actually a good thing, and it is NOT a limitation \n",
+    "Forget all about the Java approach with private attributes and getters and setters. There is another logic behind that approach."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# @Property\n",
+    "Read about : [Properties vs. Getters and Setters](https://www.python-course.eu/python3_properties.php)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Number:\n",
+    "\n",
+    "    def __init__(self, value):\n",
+    "            self.x = value\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "num = Number(12)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "12"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "num.x "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "> ## Q: What if vaalue should be between 0 and 100?"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### What about encapsulation?\n",
+    "Problem could be that data is not encapsulated"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Using the getter and setter and having encapsulated data looks like this"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The Java style approach"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class P:\n",
+    "    def __init__(self, x):\n",
+    "        self.set_x(x)\n",
+    "    \n",
+    "    def get_x(self):\n",
+    "        return self._x\n",
+    "    \n",
+    "    def set_x(self, x):\n",
+    "            \n",
+    "        if x > 1000:\n",
+    "            self._x = 1000\n",
+    "        elif x < 0:\n",
+    "            self._x = 0\n",
+    "        else:\n",
+    "            self._x = x\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p1 = P(3)\n",
+    "p2 = P(1000)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p1.set_x(p1.get_x() + p2.get_x())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1000"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "p1.get_x()"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### But, This is much cleaner and more pythonic\n",
+    "\n",
+    "````python\n",
+    "p1.x = p1.x + p2.x\n",
+    "````\n",
+    "than this:\n",
+    "\n",
+    "````python\n",
+    "p1.set_x(p1.get_x() + p2.get_x())\n",
+    "````"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## @properties solves the problem"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class P:\n",
+    "    def __init__(self, x):\n",
+    "        self.x = x # self.x is now the @x.setter\n",
+    "    \n",
+    "    @property\n",
+    "    def x(self):\n",
+    "        return self._x # this is a private variable\n",
+    "    \n",
+    "    @x.setter\n",
+    "    def x(self, x):     \n",
+    "        if x > 1000:\n",
+    "            self._x = 1000\n",
+    "        elif x < 0:\n",
+    "            self._x = 0\n",
+    "        else:\n",
+    "            self._x = x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p1 = P(-1)\n",
+    "p2 = P(1001)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "p1.x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1000"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "p2.x"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1000"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "p1.x = 101\n",
+    "p1.x = p1.x + p2.x \n",
+    "p1.x"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Datamodel\n",
+    "Read about this: [A Guide to Python's Magic Methods](https://rszalski.github.io/magicmethods/)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Protocol:**   \n",
+    "\n",
+    "Top-level function or top-level syntax has a corosponding \\__method__() "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## \\__init__()"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "When you initialize and object, there is a corosponding \\__init__() method that is called"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class S:\n",
+    "    def __init__(self): \n",
+    "        pass\n",
+    "    \n",
+    "s = S()"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## \\__repr__()"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "If you want a string representation of the object (the objects state), you call the top-level function *repr()* which has a corosponding implementation of \\__repr__"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"{'name': 'Claus'}\""
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "class S:\n",
+    "    def __init__(self, name): \n",
+    "        self.name = name\n",
+    "    def __repr__(self):\n",
+    "        return f'{self.__dict__}'\n",
+    "    \n",
+    "s = S('Claus')\n",
+    "repr(s)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## \\__repr__() vs \\__str__()  \n",
+    "Read about this: [str() vs repr() in Python](https://www.geeksforgeeks.org/str-vs-repr-in-python/)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Python has 2 options of printing a string representation. **repr()** and **str()**.    \n",
+    "They do the same thing, but str() gives an **informal** string representation of the object, repr() gives a **formal**.  \n",
+    "This means that str() is used for creating output for **end user**, repr() is mainly used for **debugging and development**."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Name: Anna'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "class S:\n",
+    "    def __init__(self, name): \n",
+    "        self.name = name\n",
+    "    def __repr__(self):\n",
+    "        return f'{self.__dict__}'\n",
+    "    def __str__(self):\n",
+    "        return f'Name: {self.name}'\n",
+    "    \n",
+    "s = S('Anna')\n",
+    "str(s)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Name: Anna\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(s)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"{'name': 'Anna'}\""
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "repr(s)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'name': 'Anna'}"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Arithmetic operators\n",
+    "+, -, *, /  \n",
+    "Read about this: [Normal arithmetic operators](https://rszalski.github.io/magicmethods/#numeric)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "2 lists can be added together by using the **+** operator"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1, 2, 3, 4, 5, 6]"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "l1 = [1, 2, 3]\n",
+    "l2 = [4, 5, 6]\n",
+    "\n",
+    "l1 + l2"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "this is because the list class has implemented the **\\__add__()** method.  \n",
+    "You can do the same in your custorm objects."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Name: Claus Anna'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "class S:\n",
+    "    def __init__(self, name): \n",
+    "        self.name = name\n",
+    "    def __repr__(self):\n",
+    "        return f'{self.__dict__}'\n",
+    "    def __str__(self):\n",
+    "        return f'Name: {self.name}'\n",
+    "    def __add__(self, other):\n",
+    "        return S(f'{self.name} {other.name}')\n",
+    "\n",
+    "s = S('Claus')\n",
+    "s2 = S('Anna')\n",
+    "str(s + s2)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Indexed objects"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "A list in python can be accessed like with this syntax:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "l1[2]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This is because a list implements the method"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def __getitem__(self):\n",
+    "    pass"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Your own object, if implementing this method can have the same behaviour"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Deck:\n",
+    "    def __init__(self):\n",
+    "        self.cards = ['A', 'K', 4, 7]\n",
+    "    \n",
+    "    def __getitem__(self, key):\n",
+    "        return self.cards[key]\n",
+    "\n",
+    "    def __repr__(self):\n",
+    "        return f'{self.__dict__}'\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        return len(self.cards)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "d = Deck()\n",
+    "d[3]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": false,
+   "sideBar": true,
+   "skip_h1_title": true,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

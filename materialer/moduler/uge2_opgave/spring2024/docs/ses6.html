@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session 6 - Functions &amp; Decorators &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Session 8 - Pythonic OOP" href="ses8.html" />
+    <link rel="prev" title="Session 5 - Utilities and Modules" href="ses5.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Session 6 - Functions &amp;  Decorators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#learning-goals">Learning goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#warm-up-functions-exercises">Warm up functions exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-decorating-add">Ex: decorating add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-time-it">Ex: Time it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-decorator-skills-evaluation">Ex: Decorator skills evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-decorating-game-characters">Ex: Decorating Game Characters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ex-menu-register">Ex: Menu register</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Session 6 - Functions &amp;  Decorators</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/ses6.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-6-functions-decorators">
+<h1>Session 6 - Functions &amp;  Decorators<a class="headerlink" href="#session-6-functions-decorators" title="Permalink to this heading"></a></h1>
+<p>So far in this elective we have focused on using other peoples python code. It could be parts of the language itself, as its data structures or build in modules like <cite>os</cite>. It has also been 3rd party modules like <cite>requests</cite> or <cite>langchain</cite>.</p>
+<p>Commend to all of this is that all the objects (code) has a sertain flavour to it, it has a cretain style.</p>
+<p>In the 2. part of this elective, starting today, we will fokus on creating our own objects that behave the same way as all other objects. Our code should have the same flavour, the same style, as all other (good) python code out there.</p>
+<p>We will start out by looking at one technique used for adding aditional functionallity to already existing code, <strong>the decorator</strong>.</p>
+<p>Then we will look at creating classes and objects, and we will especially look at the rules that make a python object behave <strong>pythonic</strong>.</p>
+<p>This will involve dealing with basic OOP concepts, looking at the python datamodel, and dealing with properties. We will in the end also look at python generators and how they can be used to creating subroutines. All aspects that can make your own python code behave like all other python code out there.</p>
+<p>But now we go on with todays topic, decorators.</p>
+<p>In Python, decorators allow you to add new functionality to your code, or other peoples code, by decorating functions (or classes) with additional code. This can make your code more modular and easier to maintain, as you can separate different concerns into separate decorators.</p>
+<p>The boilerplate syntax of a decorator is like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">3</span>            <span class="c1"># Do something before</span>
+<span class="linenos">4</span>            <span class="n">value</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">5</span>            <span class="c1"># Do something after</span>
+<span class="linenos">6</span>            <span class="k">return</span> <span class="n">value</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span>    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+<p>And if you want to use it you will do like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nd">@decorator</span>
+<span class="linenos">2</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="linenos">3</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<dl class="simple">
+<dt>Preperation:</dt><dd><p>Before we meet in class you should have:</p>
+<ul class="simple">
+<li><p>You should be on top with functions i python.
+You can du that by either reading this article <a class="reference external" href="https://realpython.com/defining-your-own-python-function/">Defining your own python functions</a> , or by using this prompt in chatgpt (1 hour):</p></li>
+</ul>
+</dd>
+</dl>
+<div class="toggle docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">score</span> <span class="n">of</span> <span class="n">how</span> <span class="n">well</span> <span class="n">my</span> <span class="n">python</span> <span class="n">programming</span> <span class="ow">is</span> <span class="k">with</span> <span class="n">the</span> <span class="n">focus</span> <span class="n">on</span> <span class="n">basic</span> <span class="n">function</span> <span class="n">elements</span> <span class="n">like</span> <span class="n">defining</span><span class="p">,</span> <span class="n">calling</span><span class="p">,</span> <span class="k">return</span> <span class="n">value</span> <span class="ow">and</span> <span class="k">return</span> <span class="nb">type</span><span class="p">,</span> <span class="n">parameters</span><span class="o">.</span> <span class="n">The</span> <span class="n">score</span> <span class="n">should</span> <span class="n">be</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">to</span> <span class="mf">10.</span>
+
+<span class="n">You</span> <span class="n">should</span> <span class="n">give</span> <span class="n">me</span> <span class="n">exercises</span> <span class="n">one</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="o">.</span> <span class="n">The</span> <span class="n">exercise</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">solved</span> <span class="k">with</span> <span class="n">code</span><span class="o">.</span> <span class="n">The</span> <span class="n">exercises</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="n">level</span> <span class="n">you</span> <span class="n">think</span> <span class="n">i</span> <span class="n">am</span> <span class="n">at</span><span class="o">.</span>
+
+<span class="n">You</span> <span class="n">will</span> <span class="n">provide</span> <span class="n">the</span> <span class="n">exercise</span> <span class="ow">and</span> <span class="n">i</span> <span class="n">will</span> <span class="n">give</span> <span class="n">you</span> <span class="n">code</span><span class="o">.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">exercise</span> <span class="n">write</span> <span class="n">what</span> <span class="n">level</span> <span class="n">you</span> <span class="n">think</span> <span class="n">i</span> <span class="n">am</span> <span class="n">at</span>
+
+<span class="n">When</span> <span class="n">you</span> <span class="n">are</span> <span class="n">confident</span> <span class="n">of</span> <span class="n">my</span> <span class="n">level</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">report</span><span class="o">.</span> <span class="n">The</span> <span class="n">report</span> <span class="n">should</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">following</span>
+<span class="mf">1.</span> <span class="n">The</span> <span class="n">level</span> <span class="n">you</span> <span class="n">think</span> <span class="n">i</span> <span class="n">am</span> <span class="n">at</span>
+<span class="mf">2.</span> <span class="n">Feedback</span> <span class="n">on</span> <span class="n">the</span> <span class="n">code</span> <span class="n">i</span> <span class="n">wrote</span>
+<span class="mf">3.</span> <span class="n">Where</span> <span class="n">i</span> <span class="n">should</span> <span class="n">focus</span> <span class="n">to</span> <span class="n">improve</span>
+
+<span class="n">Lets</span> <span class="n">start</span> <span class="k">with</span> <span class="n">the</span> <span class="n">first</span> <span class="n">question</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>You should then skim these tree articles (15 minutes)</dt><dd><ul>
+<li><p><a class="reference external" href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/inner-functions-what-are-they-good-for/">Python Inner Functions—What Are They Good For?</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-kwargs-and-args/">Python args and kwargs: Demystified</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="simple">
+<dt>Time in class</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="notebooks/Decorators.html"><span class="doc">Notebook on Decorators</span></a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/cKPlPJyQrt4?si=RgFuHWHpIqzUlMtE&amp;t=2841">What Does It Take To Be An Expert At Python?</a> (this video covers some of the topics shown in class today. From 47:20 to 1:06:31)</p></li>
+</ul>
+</dd>
+<dt>Homework</dt><dd><ul class="simple">
+<li><p>Finnish all exercises</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<section id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<p>By reading the texts in the materials section, doing the 3 exercises, and follow the teachings, you will be able to explain what a decorator is, when to use it, and how the inner parts of a decorator function is made up, and you will be able to create your own, and use others already made decorators.</p>
+<p>After this week you will know about and be able to use and explain:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>First class functions</p></li>
+<li><p>Inner functions</p></li>
+<li><dl class="simple">
+<dt>Decorator functions</dt><dd><ul>
+<li><p>explain how a decorator function works</p></li>
+<li><p>understand what the return values and return types are of the different functions used in a decorator</p></li>
+<li><p>understand why we reuse the variable names in the scope.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/inner-functions-what-are-they-good-for/">Python Inner Functions—What Are They Good For?</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-kwargs-and-args/">Python args and kwargs: Demystified</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/defining-your-own-python-function/">Defining your own python functions</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/cKPlPJyQrt4?si=RgFuHWHpIqzUlMtE&amp;t=2841">What Does It Take To Be An Expert At Python?</a></p></li>
+<li><p><a class="reference internal" href="notebooks/Decorators.html"><span class="doc">Notebook on Decorators</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses6">Code examples from teachings</a></p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<section id="warm-up-functions-exercises">
+<h3>Warm up functions exercises<a class="headerlink" href="#warm-up-functions-exercises" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/08_decorators/solutions.rst">Solution</a></p>
+<p>Think about the each of the following functions and determain what are the:</p>
+<ul class="simple">
+<li><p>return value</p></li>
+<li><p>return type</p></li>
+<li><p>parameter type</p></li>
+<li><p>parameter value</p></li>
+</ul>
+<p><strong>example1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="linenos">2</span>     <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</pre></div>
+</div>
+<p><strong>example2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">add</span><span class="p">():</span>
+<span class="linenos">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>example3</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">add</span><span class="p">():</span>
+<span class="linenos">2</span>     <span class="k">pass</span>
+</pre></div>
+</div>
+<p><strong>example4</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">2</span>     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>example5</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">msg</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">2</span>     <span class="k">return</span> <span class="n">x</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="c1"># what does this one return, what are the parameters??</span>
+<span class="linenos">5</span><span class="n">msg</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr></section>
+<section id="ex-decorating-add">
+<h3>Ex: decorating add<a class="headerlink" href="#ex-decorating-add" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/08_decorators/solutions.rst">Solution</a></p>
+<p>With this function as a starting point</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Write a decorator that writes to a log file the time stamp of each time this function is called.</p></li>
+<li><p>Change the log decorator to also printing the values of the argument together with the timestamp.</p></li>
+<li><p>Print the result of the decorated function to the log file also.</p></li>
+<li><p>Create a new function and call it printer(text) that takes a text as parameter and returns the text. Decorate it with your logfunction. Does it work?</p></li>
+</ol>
+<hr></section>
+<section id="ex-time-it">
+<h3>Ex: Time it!<a class="headerlink" href="#ex-time-it" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/08_decorators/solutions.rst">Solution</a></p>
+<p>If you want to messure how much time it takes to execute a piece of code you could do the followin:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="linenos">4</span><span class="o">//</span> <span class="n">do</span> <span class="n">some</span> <span class="n">stuff</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">meassure</span> <span class="n">here</span>
+<span class="linenos">5</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Instead of writing this every time you need to time something, you could write a docorator function that does the job for you.</p>
+<p><strong>Task:</strong></p>
+<p>Your job is, to write a decorator function that can time any piece of code.</p>
+<p>You can read about time by starting your interpretor and write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="o">&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr></section>
+<section id="ex-decorator-skills-evaluation">
+<h3>Ex: Decorator skills evaluation<a class="headerlink" href="#ex-decorator-skills-evaluation" title="Permalink to this heading"></a></h3>
+<p>Copy/paste this in “your” ChatGpt prompt.
+The recursing evaluation will work best with GPT4 (the paid version) but it is also ok i with gpt3 (used by the free version)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>I want to get a score of how well my python programming is with the focus on pythons decorator functions. The score should be from 1 to 10.
+
+You should give me exercises one at a time. The exercise need to be solved with code. The exercises should match the level you think i am at.
+
+Among other things, you should test me in both the `@decorator` annotation or the `func = decorator(func)` syntax.
+
+You will provide the exercise and i will give you code. For each exercise write what level you think i am at
+
+When you are confident of my level generate a report. The report should contain the following
+1. The level you think i am at
+2. Feedback on the code i wrote
+3. Where i should focus to improve
+
+Lets start with the first question
+</pre></div>
+</div>
+<hr></section>
+<section id="ex-decorating-game-characters">
+<h3>Ex: Decorating Game Characters<a class="headerlink" href="#ex-decorating-game-characters" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/08_decorators/solutions.rst">Solution</a></p>
+<p><strong>Background</strong>
+In the world of computer games, every character has a unique skill or ability that makes them special. For example, a character might have the ability to shoot accurately, move stealthily, or hack into computers.</p>
+<p>We’re going to use Python decorators to add unique skills or abilities to game characters.</p>
+<p><strong>Task</strong>
+Create a Python decorator that adds a unique skill or ability to a game character. The decorator should be reusable, so that we can add multiple skills or abilities to a character.</p>
+<p><strong>Example</strong>
+Here’s an example of how the decorator might be used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nd">@sharpshooter</span>
+<span class="linenos">2</span><span class="nd">@stealthy</span>
+<span class="linenos">3</span><span class="k">def</span> <span class="nf">player</span><span class="p">():</span>
+<span class="linenos">4</span>    <span class="k">return</span> <span class="s2">&quot;I&#39;m the player character&quot;</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The output of the code should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="s1">&#39;m the player character, the sharpshooter and stealthy character.</span>
+</pre></div>
+</div>
+<p><strong>Steps</strong></p>
+<ol class="arabic simple">
+<li><p>Create a decorator function that takes a function as an argument and returns a new function that adds a unique skill or ability to the character’s description.</p></li>
+<li><p>Add the decorator to the player() function to add the “sharpshooter” and “stealthy” abilities to the player character.</p></li>
+<li><p>Test your code to make sure it works as expected.</p></li>
+</ol>
+<p><strong>Bonus</strong></p>
+<ol class="arabic simple">
+<li><p>Create additional decorators for other skills or abilities that might be found in a computer game.</p></li>
+<li><p>Add multiple skills or abilities to a single character by stacking multiple decorators.</p></li>
+</ol>
+<hr></section>
+</section>
+<section id="ex-menu-register">
+<h2>Ex: Menu register<a class="headerlink" href="#ex-menu-register" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="exercises/solution/08_decorators/solutions.rst">Solution</a></p>
+<p>In this exercise you should create a register.</p>
+<p>When a new function is made you should by decorating it add it to a register (e.g a dictionary, or a list).</p>
+<p>This functionality would be something that could be used in web application frameworks like Django or Flask. When ever a new function (a route or a page) is created and decorated this register could be used for a menu or things like this.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nd">@register</span>
+<span class="linenos">2</span><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+<span class="linenos">3</span>     <span class="k">return</span> <span class="s1">&#39;I´m the home page&#39;</span>
+</pre></div>
+</div>
+<p>You can get inspiration for this ecxercise in this document: <a class="reference external" href="https://realpython.com/primer-on-python-decorators/#registering-plugins">Primer on Python Decorators</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ses5.html" class="btn btn-neutral float-left" title="Session 5 - Utilities and Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ses8.html" class="btn btn-neutral float-right" title="Session 8 - Pythonic OOP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

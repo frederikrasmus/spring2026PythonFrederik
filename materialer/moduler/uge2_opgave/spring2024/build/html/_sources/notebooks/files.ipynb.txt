@@ -1,0 +1,129 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Working with files in Python"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Read from files"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. The basic way"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'An expert is a person who has made all the mistakes that can be made in a very narrow field.\\nPrediction is very difficult, especially about the future.\\nThose who are not shocked when they first come across quantum theory cannot possibly have understood it.\\n'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "f = open('testfiles/bohr.txt', 'r')\n",
+    "f.read()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "2. With the use of the contextmanager protocol"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "An expert is a person who has made all the mistakes that can be made in a very narrow field.\n",
+      "Prediction is very difficult, especially about the future.\n",
+      "Those who are not shocked when they first come across quantum theory cannot possibly have understood it.\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "with open('testfiles/bohr.txt', 'r') as f:\n",
+    "    print(f.read())\n",
+    "    # print(f.readline())\n",
+    "    # print(f.readlines())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Write to files"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. The basic way"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "f = open('testfiles/test.txt', 'w')\n",
+    "f.write('Hello world!')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "2. With the use of the contextmanager protocol"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open('testfiles/test.txt', 'w') as f:\n",
+    "    f.write('Hello world')"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.11.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

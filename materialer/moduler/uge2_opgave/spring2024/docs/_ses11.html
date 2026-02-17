@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session 11 - Generators &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Session 11 - Generators</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/_ses11.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-11-generators">
+<h1>Session 11 - Generators<a class="headerlink" href="#session-11-generators" title="Permalink to this heading"></a></h1>
+<p>Today you will learn how to make your classes iterable. You will learn how to create a generator function and how to write this in an easier to read manner using a generator expression. You will also gain inside into why a function in python is an object and how to make your own object callable.</p>
+<p>We will look at Iterator classes</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Compute</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 3</span>            <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 4</span>            <span class="k">return</span> <span class="bp">self</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 7</span>            <span class="n">rv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span>
+<span class="linenos"> 8</span>            <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos"> 9</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="linenos">10</span>                <span class="k">raise</span> <span class="ne">StopIteration</span><span class="p">()</span>
+<span class="linenos">11</span>            <span class="n">sleep</span><span class="p">(</span><span class="mf">.5</span><span class="p">)</span>
+<span class="linenos">12</span>            <span class="k">return</span> <span class="n">rv</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Compute</span><span class="p">():</span>
+<span class="linenos">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And see how it can be done in an easier to read and use manner with a generator function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">compute</span><span class="p">():</span>
+<span class="linenos">2</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">yield</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>And write a generator expression.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Preperation</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/introduction-to-python-generators/">Introduction to Python Generators</a></p></li>
+</ul>
+</div></blockquote>
+<p>Time in class</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses11">Code examples from teachings</a></p></li>
+</ul>
+</div></blockquote>
+<p>Homework</p>
+</div>
+<section id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Understand how functions are abstractions of a class.</p></li>
+<li><dl class="simple">
+<dt>Create memory and time efficient code using:</dt><dd><ul>
+<li><p>Iterator Classes</p></li>
+<li><p>generator functions and</p></li>
+<li><p>generator expressoions.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/introduction-to-python-generators/">Introduction to Python Generators</a></p></li>
+<li><p><a class="reference external" href="https://github.com/python-elective-kea/spring2024-code-examples-from-teachings/tree/master/ses11">Code examples from teachings</a></p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<section id="ex1-python-students">
+<h3>ex1:  Python Students<a class="headerlink" href="#ex1-python-students" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/09_generators/solutions.rst">Solution</a></p>
+<p>Based on the Student class below, create a PythonStudents class that acts as a collection of students.
+The class should implement the iterations protocol (iter(), next() and StopIteration).
+When iterated the Pythod_students object should return the name of each student
+in the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>  <span class="k">class</span> <span class="nc">PythonStudents</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">pass</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>  <span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cpr</span><span class="p">):</span>
+<span class="linenos">10</span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="linenos">11</span>        <span class="bp">self</span><span class="o">.</span><span class="n">cpr</span> <span class="o">=</span> <span class="n">cpr</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>     <span class="nd">@property</span>
+<span class="linenos">14</span>     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">15</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>     <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+<span class="linenos">18</span>     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="linenos">19</span>             <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student</span><span class="p">):</span>
+<span class="linenos">22</span>             <span class="k">return</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Anna the daugther&#39;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">25</span>             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cpr</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">28</span>             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="ex2-school-of-students">
+<h3>ex2: School of students<a class="headerlink" href="#ex2-school-of-students" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/09_generators/solutions.rst">Solution</a></p>
+<p>In this exercise you start out by having a list of names, and a list of majors.</p>
+<p>Your job is to create:</p>
+<ol class="arabic simple">
+<li><p>A list of dictionaries of students (ie: students = [{‘id’: 1,’name’: ‘Claus’, ‘major’: ‘Math’}]), cretated in a normal function that returns the result.</p></li>
+<li><p>A Generator that “returns” a generator object. So the student is yield instead of returned.</p></li>
+</ol>
+<p>Both functions should do the same, but one returns a list and one a generator object.</p>
+<div class="line-block">
+<div class="line"><strong>students = [{‘id’: 1,’name’: ‘Clasu’, ‘major’: ‘Math’}]</strong></div>
+<div class="line">The id could be generated by a counter or like in a loop.</div>
+<div class="line">The Name should be found by randomly chosing a name from the names list</div>
+<div class="line">The Major should be found by randomly chosing a major from the major list</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Corey&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;Steve&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
+<span class="linenos"> 2</span><span class="n">majors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineering&#39;</span><span class="p">,</span> <span class="s1">&#39;CompSci&#39;</span><span class="p">,</span> <span class="s1">&#39;Arts&#39;</span><span class="p">,</span> <span class="s1">&#39;Business&#39;</span><span class="p">]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">students_list</span><span class="p">(</span><span class="n">num_students</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">pass</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">students_generator</span><span class="p">(</span><span class="n">num_students</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="k">pass</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">people</span> <span class="o">=</span> <span class="n">students_list</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">people</span> <span class="o">=</span> <span class="n">students_generator</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ex3-range-mimic">
+<h3>ex3: Range Mimic<a class="headerlink" href="#ex3-range-mimic" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/09_generators/solutions.rst">Solution</a></p>
+<ol class="arabic simple">
+<li><p>Create a “clone” of the build in range() function, by doing an iterator class.</p></li>
+</ol>
+<p>In the documentation you can read the following about the range function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class range(start, stop, step=1)
+Rather than being a function, range is actually an immutable sequence type, as documented in Ranges and Sequence Types — list, tuple, range.
+</pre></div>
+</div>
+<p>So the range function is actually not a function, it is a class that implements the iterator protocol.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Now do the same, but use a generator function instead.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

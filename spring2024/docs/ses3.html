@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session 3 - Python one-liners &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Session 4 - Mandatory 1: Files, Modules &amp; LLM" href="ses4.html" />
+    <link rel="prev" title="Session 2 - Data Structures: List, Tuple, Set &amp; Dict" href="ses2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Session 3 - Python one-liners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#learning-goals">Learning goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intro-watson-test">Intro: Watson Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ex-alphabet-list-comprehensions">Ex: Alphabet List Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-clothes-list-comprehension">Ex: Clothes List Comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-list-comprehension-exercises">Ex: list Comprehension exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-flatten-a-list">Ex: Flatten a list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-sort-a-text">Ex: Sort a Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-sort-a-list">Ex: Sort a list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-text-editor-plugin-simulation">Ex: Text editor plugin simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-sort-a-list-of-tuples">Ex: Sort a list of tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-logic-if-else">Ex: Logic if / else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-and-or-logic">Ex: And / or logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-list-and-strings-exercises">Ex: list and strings exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Session 3 - Python one-liners</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/ses3.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-3-python-one-liners">
+<h1>Session 3 - Python one-liners<a class="headerlink" href="#session-3-python-one-liners" title="Permalink to this heading"></a></h1>
+<p>Today everything we do will be expressed throgh code that fits on one line. We will also have our focus on programming logic.</p>
+<p>So this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">donuts</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+<span class="linenos">2</span> <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;Number of donuts: &#39;</span>
+<span class="linenos">3</span> <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+<span class="linenos">4</span>     <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;many&#39;</span>
+<span class="linenos">5</span> <span class="k">else</span><span class="p">:</span>
+<span class="linenos">6</span>     <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="linenos">7</span> <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>Becomes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">donuts</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+<span class="linenos">2</span> <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Number of donuts: </span><span class="si">{</span><span class="n">count</span> <span class="k">if</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="s1">&#39;many&#39;</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<hr><p>And this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">create</span><span class="p">():</span>
+<span class="linenos">2</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="linenos">4</span>   <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos">5</span> <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+</div>
+<p>Becomes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">create</span><span class="p">():</span>
+<span class="linenos">2</span> <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>The tendencies for python programmers to write code in this short and concise way has severel benifits:</p>
+<ul class="simple">
+<li><p>It condenses complex logic into a single line, making the code more readable and elegant.</p></li>
+<li><p>These compact expressions can often perform tasks more quickly, reducing the execution time.</p></li>
+<li><p>With less code, there’s less to debug and maintain, simplifying updates and revisions.</p></li>
+<li><p>For those familiar with Python, one-liners can be more straightforward than multi-line code.</p></li>
+<li><p>They are perfect for small scripts and on-the-fly coding, providing fast solutions.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<dl class="simple">
+<dt>Preperation</dt><dd><p>Before we meet in class you should have watched this video about sorting:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/EPYupizJYQI?si=P99QZxtQ_CVHA7H3&amp;t=840">Python google class on sorting</a> (20 min)</p></li>
+<li><p><a class="reference external" href="https://mathspp.com/blog/pydonts/list-comprehensions-101">List comprehensions 101</a> (30 min)</p></li>
+<li><p><a class="reference external" href="https://realpython.com/list-comprehension-python/">When to Use a List Comprehension in Python</a> (30m - 1h)</p></li>
+</ul>
+</dd>
+<dt>Time in class</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="notebooks/one_liners.html"><span class="doc">Teachers notes</span></a></p></li>
+</ul>
+</dd>
+<dt>Homework</dt><dd><ul class="simple">
+<li><p>Finnish the exercises</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<section id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<p>After this week you will be able to work with:</p>
+<ul class="simple">
+<li><p>logic in programming situations</p></li>
+<li><p>list comprehensions</p></li>
+<li><p>ternary operators</p></li>
+<li><p>lambda expressions</p></li>
+<li><p>Chainined Comparison Operators</p></li>
+<li><p>Sorting of a iterble including custorm sorting</p></li>
+</ul>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mathspp.com/blog/pydonts/list-comprehensions-101">List comprehensions 101</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/list-comprehension-python/">When to Use a List Comprehension in Python</a></p></li>
+<li><p><a class="reference internal" href="notebooks/listcomprehensions_map_filter.html"><span class="doc">Listcomprehensions for map, filter, reduce</span></a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/EPYupizJYQI?si=P99QZxtQ_CVHA7H3&amp;t=840">Python google class on sorting</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#sorted">sorted() build-in function</a></p></li>
+<li><p><a class="reference internal" href="notebooks/one_liners.html"><span class="doc">Teachers notes</span></a></p></li>
+</ul>
+</section>
+<section id="intro-watson-test">
+<h2>Intro: Watson Test<a class="headerlink" href="#intro-watson-test" title="Permalink to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Wason-test (Peter Cathcart Wason, 1966).</div>
+<div class="line">Consider 4 cards, where you can only see one side.</div>
+<div class="line">On each card there is a number on one side and a letter on the other.</div>
+<div class="line">Suppose you see the following 4 cards:</div>
+</div>
+<img alt="_images/card_chal.png" src="_images/card_chal.png" />
+<div class="line-block">
+<div class="line">Which cards do you need to turn over to determine if the following rule is correct?</div>
+<div class="line">If there is a vowel on one side, then there is an even number on the other side.</div>
+</div>
+<p>You get 5 minutes to thinks this through, and then we make some statistics at the black board, about your solutions.
+Afterwards you have to create a script that takes 4 cards as input and checks in the shortest/fastests way if is ‘valid’ cards or not.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<section id="ex-alphabet-list-comprehensions">
+<h3>Ex: Alphabet List Comprehensions<a class="headerlink" href="#ex-alphabet-list-comprehensions" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/03_os_sub_req/solutions.rst#ex-1-alphabet-list-comprehensions">Solution</a></p>
+<ol class="arabic simple">
+<li><p>Create a list of capital letters in the english alphabet</p></li>
+<li><p>Create a list of capital letter from the english aplhabet, but exclude 4 with the Unicode code point of either 70, 75, 80, 85.</p></li>
+<li><p>Create a list of capital letter from from the english aplhabet, but exclude every second between F &amp; O</p></li>
+</ol>
+<hr></section>
+<section id="ex-clothes-list-comprehension">
+<h3>Ex: Clothes List Comprehension<a class="headerlink" href="#ex-clothes-list-comprehension" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="exercises/solution/03_os_sub_req/solutions.rst#ex-2-clothes-list-comprehension">Solution</a></p>
+<ol class="arabic">
+<li><p>From 2 lists, using a list comprehension, create a list containing:</p>
+<blockquote>
+<div><p>[(‘Black’, ‘s’),
+(‘Black’, ‘m’),
+(‘Black’, ‘l’),
+(‘Black’, ‘xl’),
+(‘White’, ‘s’),
+(‘White’, ‘m’),
+(‘White’, ‘l’),
+(‘White’, ‘xl’)]</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>     <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span> <span class="s1">&#39;White&#39;</span><span class="p">]</span>
+<span class="linenos">2</span>     <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;xl&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>If the tuple pair is in the following list, it should not be added to the comprehension generated list.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>     <span class="n">soled_out</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;White&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<hr></section>
+<section id="ex-list-comprehension-exercises">
+<h3>Ex: list Comprehension exercises<a class="headerlink" href="#ex-list-comprehension-exercises" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Create a list of even numbers from 0 to 20.</p></li>
+<li><p>Create a list of squares of numbers from 1 to 10.</p></li>
+<li><p>Create a list of all the vowels in a given string.</p></li>
+<li><p>Create a list of common elements in two given lists. (could this be done with the use of another datastructure?)</p></li>
+<li><p>Create a list of words from a given string that have more than 4 and less than 8 letters.</p></li>
+</ol>
+<hr></section>
+<section id="ex-flatten-a-list">
+<h3>Ex: Flatten a list<a class="headerlink" href="#ex-flatten-a-list" title="Permalink to this heading"></a></h3>
+<p>Flatten this list (using a list comprehension):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>So it becomes like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr></section>
+<section id="ex-sort-a-text">
+<h3>Ex: Sort a Text<a class="headerlink" href="#ex-sort-a-text" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="exercises/solution/02_lists/sorted_exercises.html"><span class="doc">Solution</span></a></p>
+<ol class="arabic simple">
+<li><p>Create a function that takes a string as a parameter and returns a list.</p></li>
+<li><p>The function should remove all vowels and sort the consonants in alphabetic order, and the return the result.</p></li>
+</ol>
+<hr></section>
+<section id="ex-sort-a-list">
+<h3>Ex: Sort a list<a class="headerlink" href="#ex-sort-a-list" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="exercises/solution/02_lists/sorted_exercises.html"><span class="doc">Solution</span></a></p>
+<ol class="arabic simple">
+<li><p>Create a list of strings with names in it. (l = [‘Claus’, ‘Ib’, ‘Per’])</p></li>
+<li><p>Sort this list by using the sorted() build in function.</p></li>
+<li><p>Sort the list in reversed order.</p></li>
+<li><p>Sort the list on the lenght of the name.</p></li>
+<li><p>Sort the list based on the last letter in the name.</p></li>
+<li><p>Sort the list in a way that the names that has an ‘a’ in it should be sorted first (still alphabetically).</p></li>
+</ol>
+<hr></section>
+<section id="ex-text-editor-plugin-simulation">
+<h3>Ex: Text editor plugin simulation<a class="headerlink" href="#ex-text-editor-plugin-simulation" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="exercises/solution/02_lists/sorted_exercises.html"><span class="doc">Solution</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is just a sample text that could have been a million times longer.</span><span class="se">\n\n</span><span class="s1">Yours Johnny&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Count the number of characters <strong>including</strong> blank spaces.</p></li>
+<li><p>Count the number of characters <strong>excluding</strong> blank spaces.</p></li>
+<li><p>Count the number of words.</p></li>
+</ol>
+<hr></section>
+<section id="ex-sort-a-list-of-tuples">
+<h3>Ex: Sort a list of tuples<a class="headerlink" href="#ex-sort-a-list-of-tuples" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="exercises/solution/02_lists/sorted_exercises.html"><span class="doc">Solution</span></a></p>
+<p>1. Based on this list of tuples:
+<code class="code docutils literal notranslate"><span class="pre">[(1,2),(2,2),(3,2),(2,1),(2,2),(1,5),</span> <span class="pre">(10,4),</span> <span class="pre">(10,</span> <span class="pre">1),</span> <span class="pre">(3,</span> <span class="pre">1)]</span></code></p>
+<p>2. Sort the list so the result looks like this:
+<code class="code docutils literal notranslate"><span class="pre">[(2,</span> <span class="pre">1),</span> <span class="pre">(3,</span> <span class="pre">1),</span> <span class="pre">(10,</span> <span class="pre">1),</span> <span class="pre">(1,</span> <span class="pre">2),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(3,</span> <span class="pre">2),</span> <span class="pre">(10,</span> <span class="pre">4),</span> <span class="pre">(1,</span> <span class="pre">5)]</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">This is first sorted by the last element in the tuple and then the first element in the tuple.</div>
+<div class="line">You should do this in 1 step, but it might help you to try it out in 2 steps first.</div>
+</div>
+</div>
+<hr></section>
+<section id="ex-logic-if-else">
+<h3>Ex: Logic if / else<a class="headerlink" href="#ex-logic-if-else" title="Permalink to this heading"></a></h3>
+<p>You are creating a simple grade evaluation system for a class. The system should take an integer input, which represents a student’s score, and then return a grade according to the following criteria:</p>
+<ul class="simple">
+<li><p>If the score is 90 or higher, the grade should be “A”.</p></li>
+<li><p>If the score is between 80 and 89 (inclusive), the grade should be “B”.</p></li>
+<li><p>If the score is between 70 and 79 (inclusive), the grade should be “C”.</p></li>
+<li><p>If the score is between 60 and 69 (inclusive), the grade should be “D”.</p></li>
+<li><p>If the score is below 60, the grade should be “F”.</p></li>
+<li><p>Additionally, if the score is outside the range of 0 to 100, the system should return “Invalid score”.</p></li>
+</ul>
+<p>Your task is to write a Python function that takes a score as an input and returns the corresponding grade.
+You are welcome to write this in a straight forward if/else approch, but you should also write it in a one-liner using a ternary operator.</p>
+<p>Solution: When you are done, copy/paste this exercise description + your solution into ChatGpt, asking it for feed back on how you solved the problem and where you could improve your solution.</p>
+<hr></section>
+<section id="ex-and-or-logic">
+<h3>Ex: And / or logic<a class="headerlink" href="#ex-and-or-logic" title="Permalink to this heading"></a></h3>
+<p>You are programming a room reservation system for a hotel. The system should check if a room can be reserved based on the following criteria:</p>
+<ul class="simple">
+<li><p>The room can be reserved if it is not already booked and the number of guests does not exceed the room’s capacity.</p></li>
+<li><p>There are two types of rooms: standard and deluxe.</p></li>
+<li><p>A standard room can accommodate up to 2 guests, while a deluxe room can accommodate up to 4 guests.</p></li>
+<li><p>The reservation request will provide the room type (either “standard” or “deluxe”) and the number of guests.</p></li>
+<li><p>The system should return True if the reservation can be made and False otherwise.</p></li>
+</ul>
+<p>Your task is to write a Python function that takes the room number and the number of guests as inputs and returns whether the reservation can be made.</p>
+<p>You should have some kind of datastructure for storing if the room is awaliable or not.</p>
+<p>Again, you should write this in a straight forward approach, and in a python one-liner aaproach.</p>
+<p>Solution: When you are done, copy/paste this exercise description + your solution into ChatGpt, asking it for feed back on how you solved the problem and where you could improve your solution.</p>
+<hr></section>
+<section id="ex-list-and-strings-exercises">
+<h3>Ex: list and strings exercises<a class="headerlink" href="#ex-list-and-strings-exercises" title="Permalink to this heading"></a></h3>
+<p>Based on the exercises from earlier this semester, solve the problems, but do it with one-liners instead of the solution we did earlier.
+So all functions (if possible) should have a: return f’xxx’ where all code is in this one line.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="exercises/strings/strings.html"><span class="doc">Exercise 1: Strings1 &amp; Strings2</span></a></p></li>
+<li><p><a class="reference internal" href="exercises/lists/lists.html"><span class="doc">List &amp; tuple exercises</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ses2.html" class="btn btn-neutral float-left" title="Session 2 - Data Structures: List, Tuple, Set &amp; Dict" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ses4.html" class="btn btn-neutral float-right" title="Session 4 - Mandatory 1: Files, Modules &amp; LLM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

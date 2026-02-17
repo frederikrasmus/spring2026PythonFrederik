@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working in teams on Python projects &mdash; Introduktion til python 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Introduktion til python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About this elective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses1.html">Session 1 - Introduction to python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses2.html">Session 2 - Data Structures: List, Tuple, Set &amp; Dict</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses3.html">Session 3 - Python one-liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses4.html">Session 4 -  Mandatory 1: Files, Modules &amp; LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses5.html">Session 5 - Utilities and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses6.html">Session 6 - Functions &amp;  Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses8.html">Session 8 - Pythonic OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses9.html">Session 9 - The python datamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses10.html">Session 10 - Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses11.html">Session 11.1 - Data analysis &amp; visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses11a.html">Session 11.2 - Python web devlopment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses12.html">Session 12 - Mandatory Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses13.html">Session 13 - Exam preperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ses14.html">Session 14 - Exam preperation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Introduktion til python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Working in teams on Python projects</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/python-elective-kea/spring2024/blob/master/source/notebooks/best_practice_github.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Working-in-teams-on-Python-projects">
+<h1>Working in teams on Python projects<a class="headerlink" href="#Working-in-teams-on-Python-projects" title="Permalink to this heading"></a></h1>
+<section id="1.-Build-new-image-before-each-container-run">
+<h2>1. Build new image before each container run<a class="headerlink" href="#1.-Build-new-image-before-each-container-run" title="Permalink to this heading"></a></h2>
+<div class="line-block">
+<div class="line">In this first approach we build a new image with the requirements installed at build time.</div>
+<div class="line">From this image you can then run a container with the up to date requirements installed.</div>
+<div class="line">This means you will need to build a new docker image and run a container based on that image each time you do a pull from your groups github repository.</div>
+</div>
+<p>In your repository you will need your</p>
+<ul class="simple">
+<li><p><strong>code</strong></p></li>
+<li><p>a <strong>Dockerfile</strong>, and a</p></li>
+<li><p><strong>requirements.txt</strong> file</p></li>
+</ul>
+<p>Your Docker file should look something like this:</p>
+<section id="Dockerfile">
+<h3>Dockerfile<a class="headerlink" href="#Dockerfile" title="Permalink to this heading"></a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># the base image
+FROM python:3.8-alpine
+
+# copy all files from dir with Dockerfile and requirements.txt to /app folder in image
+COPY . /app
+
+# cd into /app folder with (in this case only) the requirements.txt
+WORKDIR /app
+
+# install python modules
+RUN pip install -r requirements.txt
+
+# Change into / as startingpoint of container
+WORKDIR /
+
+# when container runs it should start in a ash terminal
+CMD [&quot;ash&quot;]
+</pre></div>
+</div>
+<p>Your requirements.txt file should look something like this:</p>
+</section>
+<section id="requirements.txt">
+<h3>requirements.txt<a class="headerlink" href="#requirements.txt" title="Permalink to this heading"></a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>certifi==2020.6.20
+chardet==3.0.4
+idna==2.10
+requests==2.24.0
+urllib3==1.25.10
+</pre></div>
+</div>
+</section>
+<section id="Step-by-step-(pulling)">
+<h3>Step by step (pulling)<a class="headerlink" href="#Step-by-step-(pulling)" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>pull repository from github</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+</ul>
+</li>
+<li><p>build a new image from dockerfile</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">&lt;&lt;imagename&gt;&gt;</span> <span class="pre">.</span></code></p></li>
+</ul>
+</li>
+<li><p>remove the dangling image (the image you just have overwritten, and that is now named &lt;none&gt;)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">$(docker</span> <span class="pre">images</span> <span class="pre">-f</span> <span class="pre">'dangling=true'</span> <span class="pre">-q)</span></code></p></li>
+</ul>
+</li>
+<li><p>run your container</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">-v</span> <span class="pre">${PWD}:/docs</span> <span class="pre">&lt;&lt;imagename&gt;&gt;</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="Step-by-step-(pushing)">
+<h3>Step by step (pushing)<a class="headerlink" href="#Step-by-step-(pushing)" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>in you container with the new requirements installed (pip install &lt;&lt;module&gt;&gt;) do a:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code></p></li>
+</ul>
+</li>
+<li><p>push your code to gihub</p></li>
+<li><p>if or when you close your running container you will need to performe 2, 3, 4 from above</p></li>
+</ol>
+</section>
+</section>
+<section id="2.-Install-requirements-in-container-at-run">
+<h2>2. Install requirements in container at run<a class="headerlink" href="#2.-Install-requirements-in-container-at-run" title="Permalink to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This second approach installs requirements in the container at container start instead of installing it in the image at build time.</div>
+<div class="line">This means that you only have to build the image once.</div>
+</div>
+<p>Your dockerfile has to change a bit.</p>
+<section id="id1">
+<h3>Dockerfile<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># the base image
+FROM python:3.8-alpine
+
+# copy all files from dir with Dockerfile and requirements.txt to /app folder in image
+COPY . /app
+
+# cd into /app folder with (in this case only) the requirements.txt
+WORKDIR /app
+
+# install python modules
+RUN pip install -r requirements.txt
+
+# Change into / as startingpoint of container
+# WORKDIR /
+# it is easiest to stay in the /app folder when you run the CMD below. (so thats why change to workdir is commented out.)
+
+############################################
+## Add this command. #######################
+## This will run as the first thing when ###
+## you run your container. #################
+
+# install modules listed in requirements.txt, and start the ash terminal
+CMD pip install -q -r requirements.txt &amp; ash
+</pre></div>
+</div>
+<p>Your docker run command will look like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">-v</span> <span class="pre">${PWD}:/app</span> <span class="pre">&lt;&lt;imagename&gt;&gt;</span></code></p>
+<p>note: we use the /app folder instead of /docs</p>
+</section>
+</section>
+<section id="Which-method-is-best?">
+<h2>Which method is best?<a class="headerlink" href="#Which-method-is-best?" title="Permalink to this heading"></a></h2>
+<p>Method number 2 are prefered during devolopment. This will eliminate the step of having to build a new image each time you need to run a container. On the other hand when the development phase is over, the first methods are prefered. This is because instalation of all requirements at container run is time consuming (even if there is no requirements updates) and it is unnessesary, since it can be done at image build instead.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Claus Bove.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
